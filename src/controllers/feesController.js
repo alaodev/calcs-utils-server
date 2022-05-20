@@ -2,7 +2,13 @@ const services = require('../services');
 
 const calculateSimpleFeesController = async (req, res) => {
   try {
-    const result = await services.fees.calculateSimpleFees();
+    const result = await services.fees.calculateSimpleFees(
+      parseFloat(req.query.initialValue), 
+      parseFloat(req.query.interestRate), 
+      req.query.period, 
+      req.query.interestRateGranularity, 
+      req.query.periodInGranularity
+    );
     res.status(200).send(result);
   } catch (e) {
     console.error(e);
@@ -12,7 +18,14 @@ const calculateSimpleFeesController = async (req, res) => {
 
 const calculateCompoundFeesController = async (req, res) => {
   try {
-    const result = await services.fees.calculateCompoundFees();
+    const result = await services.fees.calculateCompoundFees(
+      parseFloat(req.query.initialValue),
+      parseFloat(req.query.monthlyValue),
+      parseFloat(req.query.interestRate),
+      req.query.period,
+      req.query.interestRateGranularity,
+      req.query.periodInGranularity
+    );
     res.status(200).send(result);
   } catch (e) {
     console.error(e);
