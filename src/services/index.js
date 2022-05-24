@@ -1,5 +1,5 @@
-const fees = require('./fees');
+const finance = require('./finance');
 
 module.exports = {
-  fees,
+  finance,
 }

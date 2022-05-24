@@ -2,7 +2,7 @@ const services = require('../services');
 
 const calculateSimpleFeesController = async (req, res) => {
   try {
-    const result = await services.fees.calculateSimpleFees(
+    const result = await services.finance.calculateSimpleFees(
       parseFloat(req.query.initialValue), 
       parseFloat(req.query.interestRate), 
       req.query.period, 
@@ -18,7 +18,7 @@ const calculateSimpleFeesController = async (req, res) => {
 
 const calculateCompoundFeesController = async (req, res) => {
   try {
-    const result = await services.fees.calculateCompoundFees(
+    const result = await services.finance.calculateCompoundFees(
       parseFloat(req.query.initialValue),
       parseFloat(req.query.monthlyValue),
       parseFloat(req.query.interestRate),
