@@ -7,6 +7,7 @@ module.exports = {
     clientSecret: process.env.NODEMAILER_CLIENT_SECRET,
     refreshToken: process.env.NODEMAILER_REFRESH_TOKEN,
     accessToken: process.env.NODEMAILER_ACCESS_TOKEN,
+    expires: process.env.NODEMAILER_EXPIRES,
   },
   tls: { rejectUnauthorized: false },
 }
