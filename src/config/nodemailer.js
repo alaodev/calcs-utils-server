@@ -1,5 +1,5 @@
 module.exports = {
-  service: 'Gmail',
+  service: "Gmail",
   auth: {
     type: 'OAuth2',
     user: process.env.NODEMAILER_AUTH_USER,
@@ -7,7 +7,7 @@ module.exports = {
     clientSecret: process.env.NODEMAILER_CLIENT_SECRET,
     refreshToken: process.env.NODEMAILER_REFRESH_TOKEN,
     accessToken: process.env.NODEMAILER_ACCESS_TOKEN,
-    expires: process.env.NODEMAILER_EXPIRES,
+    expiresIn: 1494388182480,
   },
   tls: { rejectUnauthorized: false },
 }
