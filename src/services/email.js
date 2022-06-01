@@ -12,7 +12,7 @@ const sendEmail = (values) => new Promise((resolve, reject) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(`Error: ${error}`);
-      resolve(false);
+      reject(false);
     } else {
       console.log(`Success: ${info.response}`);
       resolve(true);
